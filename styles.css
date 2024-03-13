@@ -4,12 +4,12 @@
     margin: 0 auto;
     padding:  0;
     box-sizing: border-box;
-    font-family: "DM Serif Display", serif;
+    font-family: "DM Sans", sans-serif;
     font-weight: 400;
     font-weight: 400;
-    color: var(--black);
     text-decoration: none;
 }
+
 
 button {
     font-family: "DM Sans", sans-serif;
@@ -18,6 +18,8 @@ button {
 }
 :root {
     --grey: #F7F7F7;
+    --dark-grey: #C7C7C7;
+    --black: #3E3E3E;
 }
 
 html {
@@ -105,9 +107,10 @@ main section {
 }
 
 .display-info h3 {
+    font-family: "DM Serif Display";
     padding-left: 5.5rem;
     margin:  0;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 1rem;
 }
 
@@ -142,7 +145,7 @@ main section {
 }
 
 .display-image img {
-    height: 27rem;
+    height: 25rem;
     align-self: center;
 }
 
@@ -153,17 +156,13 @@ main section {
 }
 
 #product-list {
-    height: auto;
-}
-
-#product-container {
+    width: calc(100% - 12rem);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 400px);
     grid-gap: 1.5rem;
-    margin-top: 5.5rem;
     margin: 5.5rem 6rem;
-    height: 1000px;
+    margin-bottom: 0
 }
 
 .product {
@@ -175,17 +174,318 @@ main section {
     align-items: center
 }
 
+.product .product-img{
+    display: flex;
+}
+
+.product .product-img img {
+    flex: none;
+    align-self: center;
+    width: 11rem;
+}
+
+.product:nth-child(1) .product-img img {
+    align-self: center;
+    width: 10.5rem;
+}
+
+.product:nth-child(2) .product-img img,
+.product:nth-child(3) .product-img img {
+    flex: none;
+    align-self: center;
+    width: 9rem;
+}
+.product:nth-child(4) .product-img img {
+    flex: none;
+    align-self: center;
+    width: 8rem;
+}
+
+
 .product-img{
     height: 80%;
 }
 
-.product img {
-    width: 14rem;
-}
-
 .product-info {
     height: 20%;
-    border: 1px solid black;
     width: 100%;
+}
 
+.product-info p {
+    position: relative;
+    font-size:  0.9rem;
+    width: 70%;
+}
+
+.product-info p span {
+    position: absolute;
+    right: 0;
+}
+
+
+#store-visit {
+    width: calc(100% - 12rem);
+    margin: auto 6rem;
+    height: auto;
+    margin-bottom: 3rem;
+}
+
+#store-visit hr{
+    margin: 4rem 0;
+    margin-bottom: 3rem;
+    height: 2px;
+    background: var(--dark-grey);
+}
+
+#store-visit>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 30% 30% 40%;
+    background-color: var(--grey);
+    height: 500px;
+    width: 100%;
+}
+
+#store-visit>div div:nth-child(1){
+
+    background-color: whitesmoke;
+    width: 100%;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+
+#store-visit>div div:nth-child(1) iframe{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+#store-visit>div div:nth-child(2)
+{
+    background-color: white;
+    width: 100%;
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#store-visit>div div:nth-child(2) img{
+    filter: brightness(80%);
+    width: 100%;
+    height: 100%;
+
+}
+
+#store-visit>div div:nth-child(3)
+{
+    background-color: white;
+    width: 100%;
+    grid-column: 3/-1;
+    grid-row: 1/2;
+}
+
+#store-visit>div div:nth-child(3) img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+
+#store-visit>div div:nth-child(4)
+{
+    background-color: #E9E9E9;
+    width: 100%;
+    grid-column: 3/-1;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#store-visit>div div:nth-child(4) h3 {
+    width: 80%;
+    font-family: "DM Serif Display";
+    margin-bottom: 0.5rem;
+}
+
+#store-visit>div div:nth-child(4) p {
+    width: 80%;
+    font-size: 0.8rem;
+}
+
+
+#store-visit>div div:nth-child(5)
+{   
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color:#E9E9E9;
+    width: 100%;
+    grid-column: 1/3;
+    grid-row: 3/-1;
+}
+
+#store-visit>div div:nth-child(5) h2 {
+    width: 90%;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+
+}
+#store-visit>div div:nth-child(5) p {
+    width: 90%;
+    font-size: 0.9rem;
+}
+#store-visit>div div:nth-child(5) span {
+    width: 90%;
+    margin-top: 1rem;
+}
+
+#store-visit>div div:nth-child(5) button{
+    border-radius: 50%;
+    border: none;
+    background-color: var(--dark-grey);
+    color: black;
+    font-size: 1rem;
+    height: 2.3rem;
+    width: 2.3rem;
+    cursor: pointer;
+}
+
+#store-visit>div div:nth-child(6)
+{
+    background-color: white;
+    width: 100%;
+    grid-column: 3/-1;
+    grid-row: 3/-1;
+    display: flex;
+}
+
+#store-visit>div div:nth-child(6) img {
+    filter: contrast(105%);
+    width: 100%;
+    object-fit: cover;
+}
+
+#keep-updated {
+    display: flex;
+    flex-direction: row;
+    width: calc(100% - 12rem);
+    margin: auto 6rem;
+    height: 400px;
+    margin-bottom: 3rem;
+}
+
+#newsletter, #contact-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#newsletter {
+    background: var(--grey);
+    width: 50%;
+    height: 100%;
+}
+
+#newsletter h6 {
+    font-family: "DM Serif Display";
+    font-size: 1.5rem;
+}
+
+#newsletter form {
+    display: flex;
+    margin-top: 1rem;
+    background: #E9E9E9;
+    border-radius: 5px;
+    height: 2.5rem;
+    width: 65%;
+}
+
+input, textarea {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+
+#newsletter form input[type="email"]{
+    background: transparent;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    width: 70%;
+    padding-left: 0.5rem;
+    height: 80%;
+}
+
+#email:focus{
+    border-bottom: 1px solid --black !important;
+}
+
+#newsletter form input[type="submit"]{
+    justify-self: center;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    width: 25%;
+    height: 80%;
+    background: #3E3E3E;
+    margin-right: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+#contact-us {
+    background: #E9E9E9;
+    width: 50%;
+    height: 100%;
+}
+
+#contact-us h6 {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+#contact-us p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    width: 70%;
+}
+
+
+#contact-us form {
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+
+#contact-us input{
+    height: 2.2rem;
+    width: 80%;
+} 
+
+textarea {
+    margin-top: 1rem;
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid ;
+}
+
+#contact-us input[type="submit"]{
+    margin-top: 1rem;
+    border-radius: 5px;
+    width: 25%;
+    background: #3E3E3E;
+    color: white;
+    cursor: pointer;
+    border: none;
 }
