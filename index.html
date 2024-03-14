@@ -22,17 +22,46 @@
     </header>
     <main id="main">
         <section id="product-highlight">
-            <div class="product-display">
-                <div class="display-info">
-                    <h3>SATCHEL</h3>
-                    <h6>Elevate your style with our exquisitely crafted luxury, a symbol of refined sophistication and understated elegance.</h6>
-                    <button>BUY THIS </button>
-                    <p>Product details</p>
-                </div>
-                <div class="display-image">
-                    <img src="sling-bag.png">
+            <div class="product-wrapper">
+                <div class="product-slider">
+                    <div id="display-1">
+                        <div class="display-info">
+                            <h3>SATCHEL</h3>
+                            <h6>Elevate your style with our exquisitely crafted luxury, a symbol of refined sophistication and understated elegance.</h6>
+                            <button>BUY THIS </button>
+                            <p>Product details</p>
+                        </div>
+                        <div class="display-image">
+                            <img src="sling-bag.png">
+                        </div>
+                    </div>
+                    <div id="display-2">
+                        <div class="display-info">
+                            <h3>SATCHEL</h3>
+                            <h6>Elevate your style with our exquisitely crafted luxury, a symbol of refined sophistication and understated elegance.</h6>
+                            <button>BUY THIS </button>
+                            <p>Product details</p>
+                        </div>
+                        <div class="display-image">
+                            <img src="backpack.png">
+                        </div>
+                    </div>
+                    <div id="display-3">
+                        <div class="display-info">
+                            <h3>SATCHEL</h3>
+                            <h6>Elevate your style with our exquisitely crafted luxury, a symbol of refined sophistication and understated elegance.</h6>
+                            <button>BUY THIS </button>
+                            <p>Product details</p>
+                        </div>
+                        <div class="display-image">
+                            <img src="duffel-bag.png">
+                        </div>
+                    </div>
                 </div>
                 <div class="display-nav">
+                    <a href="#display-1"></a>
+                    <a href="#display-2"></a>
+                    <a href="#display-3"></a>
                 </div>
             </div>
         </section>
@@ -247,7 +276,38 @@
     </p>
     <p>A freeCodeCamp Project 2024</p> 
     </footer>
-
-</html>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let currentIndex = 0; // Start with the first display
+      let direction = 1; // 1 for forward, -1 for backward
+      const slider = document.querySelector('.product-slider');
+      const displays = document.querySelectorAll('.product-slider > div');
+      const displayWidth = slider.offsetWidth; // Assuming each display takes up the whole slider width
+  
+      function scrollToDisplay() {
+        // Calculate the scroll position for the current index
+        const scrollPosition = currentIndex * displayWidth;
+        slider.scrollTo({
+          left: scrollPosition,
+          behavior: 'smooth'
+        });
+  
+        // Determine the next index and adjust direction if needed
+        if (currentIndex === 0) {
+          direction = 1; // Move forward
+        } else if (currentIndex === displays.length - 1) {
+          direction = -1; // Reverse the direction to move backward
+        }
+  
+        currentIndex += direction;
+      }
+  
+      // Set an interval to scroll to the next display every 3 seconds
+      setInterval(scrollToDisplay, 3000);
+    });
+  </script>
+  
+
+  
 </html>
